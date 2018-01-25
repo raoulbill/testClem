@@ -1,0 +1,39 @@
+// an ignored comment
+/** not an ignored comment */
+entity Consultant {
+	firstName String, 
+    lastName String, 
+    phoneNumber String,
+    portablePhoneNumber String,
+    email String, 
+    streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String,
+    jobName String,
+}
+
+entity Job {
+	jobTitle String,
+    client String, 
+	tjm Long,
+    startDate Date,
+    endDate Date ,
+    autoReconduction Boolean
+}
+entity Capacity {
+	name String
+}
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Consultant{job} to Job
+	Consultant{capacity} to Capacity
+}
+paginate Job with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+// Set an angular suffix
+angularSuffix * with mySuffix
