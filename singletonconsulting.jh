@@ -11,6 +11,7 @@ entity Consultant {
 	city String,
 	stateProvince String,
     jobName String,
+    experience Integer
 }
 
 entity Job {
